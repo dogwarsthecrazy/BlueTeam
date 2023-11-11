@@ -67,7 +67,7 @@ void loop() {
     if (pinHigh(overflow)== true) serviceLEDON(); 
     if (pinHigh(bottleDetect) & pinHigh(doorDetect)){ // if bottle present and door closed 
         if (state == 1) {
-            if (pinHigh(Button)== false) state = 2; 
+            if (pinHigh(button)== false) state = 2; 
         }
         if (state ==2){
             if (cycle_time = 0){
@@ -75,7 +75,7 @@ void loop() {
                 ON(heater);
                 cycle_time = millis();
             }
-            if (pinHigh(Button)== true) state = 4; 
+            if (pinHigh(button)== true) state = 4; 
             Cycle();
         }
         if (state ==3){
